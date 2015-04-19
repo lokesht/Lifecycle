@@ -18,7 +18,7 @@ public class ActivityB extends Activity {
 
 		setContentView(R.layout.activity_main);
 
-		AppLogger.writeLog("B-OnStart");
+		AppLogger.writeLog("B-OnCreate");
 		count++;
 		
 		/***/
@@ -41,43 +41,59 @@ public class ActivityB extends Activity {
 	protected void onStart() {
 		super.onStart();
 		AppLogger.writeLog("B-OnStart");
-		AppLogger.ToastLong(this, "B-OnStart");
+		AppLogger.ToastShort(this, "B-OnStart");
 
 	}
 
 	@Override
+	protected void onRestoreInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		
+		AppLogger.writeLog("B-onRestoreInstanceState");
+		AppLogger.ToastShort(this, "B-onRestoreInstanceState");
+	}
+	
+	@Override
 	protected void onResume() {
 		super.onResume();
 		AppLogger.writeLog("B-onResume");
-		AppLogger.ToastLong(this, "B-onResume");
+		AppLogger.ToastShort(this, "B-onResume");
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
 		AppLogger.writeLog("B-onPause");
-		AppLogger.ToastLong(this, "B-onPause");
+		AppLogger.ToastShort(this, "B-onPause");
 	}
 
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		
+		AppLogger.writeLog("B-onSaveInstanceState");
+		AppLogger.ToastShort(this, "B-onSaveInstanceState");
+	}
+	
 	@Override
 	protected void onStop() {
 		super.onStop();
 		AppLogger.writeLog("B-onStop");
-		AppLogger.ToastLong(this, "B-onStop");
+		AppLogger.ToastShort(this, "B-onStop");
 	}
 
 	@Override
 	protected void onRestart() {
 		super.onRestart();
 		AppLogger.writeLog("B-onRestart");
-		AppLogger.ToastLong(this, "B-onRestart");
+		AppLogger.ToastShort(this, "B-onRestart");
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		AppLogger.writeLog("B-onDestroy");
-		AppLogger.ToastLong(this, "B-onDestroy");
+		AppLogger.ToastShort(this, "B-onDestroy");
 	}
 
 }

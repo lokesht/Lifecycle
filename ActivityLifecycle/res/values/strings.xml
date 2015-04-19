@@ -4,5 +4,9 @@
     <string name="app_name">ActivityLifecycle</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+     <string name="action_save_instance">Save Instance Example</string>
+    
+     <string name="implecit_intent">implecit Intent</string>
 
 </resources>

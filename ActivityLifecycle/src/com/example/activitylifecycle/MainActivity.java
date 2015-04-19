@@ -3,10 +3,15 @@ package com.example.activitylifecycle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.TextView;
 
 import com.example.Logging.AppLogger;
+import com.example.activityinstance.SavedInstance;
+import com.example.implecitintent.ActivityImplicitIntent;
 
 public class MainActivity extends Activity {
 
@@ -18,7 +23,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		AppLogger.writeLog("A-onCreate");
-		AppLogger.ToastLong(this, "A-onCreate");
+		AppLogger.ToastShort(this, "A-onCreate");
 		count++;
 
 		/** */
@@ -41,29 +46,42 @@ public class MainActivity extends Activity {
 	protected void onStart() {
 		super.onStart();
 		AppLogger.writeLog("A-OnStart");
-		AppLogger.ToastLong(this, "A-OnStart");
+		AppLogger.ToastShort(this, "A-OnStart");
 
 	}
 
 	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+		AppLogger.writeLog("A-onRestoreInstanceState");
+		AppLogger.ToastShort(this, "A-onRestoreInstanceState");
+	}
+	@Override
 	protected void onResume() {
 		super.onResume();
 		AppLogger.writeLog("A-onResume");
-		AppLogger.ToastLong(this, "A-onResume");
+		AppLogger.ToastShort(this, "A-onResume");
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
 		AppLogger.writeLog("A-onPause");
-		AppLogger.ToastLong(this, "A-onPause");
+		AppLogger.ToastShort(this, "A-onPause");
 	}
 
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		
+		AppLogger.writeLog("A-onSaveInstanceState");
+		AppLogger.ToastShort(this, "A-onSaveInstanceState");
+	}
 	@Override
 	protected void onStop() {
 		super.onStop();
 		AppLogger.writeLog("A-onStop");
-		AppLogger.ToastLong(this, "A-onStop");
+		AppLogger.ToastShort(this, "A-onStop");
 		
 		
 	}
@@ -72,18 +90,40 @@ public class MainActivity extends Activity {
 	protected void onRestart() {
 		super.onRestart();
 		AppLogger.writeLog("A-onRestart");
-		AppLogger.ToastLong(this, "A-onRestart");
+		AppLogger.ToastShort(this, "A-onRestart");
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		AppLogger.writeLog("A-onDestroy");
-		AppLogger.ToastLong(this, "A-onDestroy");
+		AppLogger.ToastShort(this, "A-onDestroy");
 		
 		/** Just two check what will happen if call again*/
 //		Intent in = new Intent(this, MainActivity.class);
 //		startActivity(in);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent in=null;
+		switch(item.getItemId())
+		{
+		case R.id.action_save_instance:
+			 in = new Intent(this, SavedInstance.class);
+			startActivity(in);
+			break;
+		case R.id.action_implicit_intent:
+			 in = new Intent(this, ActivityImplicitIntent.class);
+			startActivity(in);
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 }

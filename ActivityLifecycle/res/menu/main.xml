@@ -5,5 +5,17 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         android:showAsAction="never"/>
+    
+    <item
+        android:id="@+id/action_save_instance"
+        android:orderInCategory="100"
+        android:title="@string/action_save_instance"
+        android:showAsAction="never"/>
+    
+    <item
+        android:id="@+id/action_implicit_intent"
+        android:orderInCategory="100"
+        android:title="@string/implecit_intent"
+        android:showAsAction="never"/>
 
 </menu>
