@@ -39,8 +39,8 @@ public class FragmentLife extends Fragment {
 		Log.e(TAG, "FRAG-onCreateView");
 		AppLogger.ToastShort(getActivity(), "FRAG-onCreateView");
 		AppLogger.writeLog("FRAG-onCreateView");
-
-		return inflater.inflate(R.layout.fragment_life, container, false);
+		View v = inflater.inflate(R.layout.fragment_life, container, false);
+		return v;
 		// return super.onCreateView(inflater, container, savedInstanceState);
 	}
 

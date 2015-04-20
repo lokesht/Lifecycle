@@ -24,5 +24,11 @@
         android:title="@string/customtoast"
         android:showAsAction="never"/>
     
+    <item
+        android:id="@+id/action_dynamic_frag"
+        android:orderInCategory="100"
+        android:title="@string/activity_dynamic_frag"
+        android:showAsAction="never"/>
+    
 
 </menu>

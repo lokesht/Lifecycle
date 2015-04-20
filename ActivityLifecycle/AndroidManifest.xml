@@ -35,6 +35,7 @@
         <activity android:name="com.example.implecitintent.ActivityImplicitIntent">
         </activity>
         <activity android:name="com.example.toast.ActivityCustomToast"></activity>
+        <activity android:name="com.example.activitylifecycle.ActivityDynamicFrag"></activity>
     </application>
 
 </manifest>

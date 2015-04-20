@@ -23,16 +23,6 @@
         android:layout_alignLeft="@+id/tv_test"
         android:layout_below="@+id/tv_test"
         android:onClick="onProcess"
-        android:text="OnIntent" />
-
-<!--     <fragment -->
-<!--         android:id="@+id/fragment1" -->
-<!--         android:name="com.example.fragment.FragmentLife" -->
-<!--         android:layout_width="wrap_content" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:layout_alignRight="@+id/button1" -->
-<!--         android:layout_below="@+id/button1" -->
-<!--         android:layout_marginRight="28dp" -->
-<!--         android:layout_marginTop="32dp" /> -->
+        android:text="onAddFragment" />
 
 </RelativeLayout>

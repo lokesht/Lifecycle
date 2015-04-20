@@ -147,6 +147,10 @@ public class MainActivity extends Activity {
 		case R.id.action_custom_toast:
 			in = new Intent(this, ActivityCustomToast.class);
 			startActivity(in);
+			
+		case R.id.action_dynamic_frag:
+			in = new Intent(this, ActivityDynamicFrag.class);
+			startActivity(in);
 		}
 		return super.onOptionsItemSelected(item);
 	}
