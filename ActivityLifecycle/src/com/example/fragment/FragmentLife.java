@@ -1,19 +1,20 @@
 package com.example.fragment;
 
-import com.example.Logging.AppLogger;
-import com.example.activitylifecycle.R;
-
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.Logging.AppLogger;
+import com.example.activitylifecycle.R;
+
 public class FragmentLife extends Fragment {
 
 	String TAG = "FragmentLife";
+
 	@Override
 	public void onAttach(Activity activity) {
 
@@ -26,7 +27,7 @@ public class FragmentLife extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		Log.e(TAG, "FRAG-onCreate");
 		AppLogger.ToastShort(getActivity(), "FRAG-onCreate");
 		AppLogger.writeLog("FRAG-onCreate");
@@ -35,14 +36,21 @@ public class FragmentLife extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-		
-		
 		Log.e(TAG, "FRAG-onCreateView");
 		AppLogger.ToastShort(getActivity(), "FRAG-onCreateView");
 		AppLogger.writeLog("FRAG-onCreateView");
-		
+
 		return inflater.inflate(R.layout.fragment_life, container, false);
-		//return super.onCreateView(inflater, container, savedInstanceState);
+		// return super.onCreateView(inflater, container, savedInstanceState);
+	}
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+
+		Log.e(TAG, "FRAG-onActivityCreated");
+		AppLogger.ToastShort(getActivity(), "FRAG-onActivityCreated");
+		AppLogger.writeLog("FRAG-onActivityCreated");
 	}
 
 	@Override
@@ -70,6 +78,14 @@ public class FragmentLife extends Fragment {
 		Log.e(TAG, "FRAG-onPause");
 		AppLogger.ToastShort(getActivity(), "FRAG-onPause");
 		AppLogger.writeLog("FRAG-onPause");
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		Log.e(TAG, "FRAG-onSaveInstanceState");
+		AppLogger.ToastShort(getActivity(), "FRAG-onSaveInstanceState");
+		AppLogger.writeLog("FRAG-onSaveInstanceState");
 	}
 
 	@Override

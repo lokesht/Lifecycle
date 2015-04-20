@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.Logging.AppLogger;
 import com.example.activityinstance.SavedInstance;
-import com.example.fragment.FragmentLife;
 import com.example.implecitintent.ActivityImplicitIntent;
 import com.example.toast.ActivityCustomToast;
 
