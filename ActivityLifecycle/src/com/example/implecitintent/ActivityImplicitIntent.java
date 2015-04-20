@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Picture;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;

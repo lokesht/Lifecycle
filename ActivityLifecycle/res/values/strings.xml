@@ -8,5 +8,7 @@
      <string name="action_save_instance">Save Instance Example</string>
     
      <string name="implecit_intent">implecit Intent</string>
+    
+     <string name="customtoast">CustomToast</string>
 
 </resources>

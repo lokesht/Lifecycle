@@ -1,14 +1,14 @@
 package com.example.activityinstance;
 
-import com.example.Logging.AppLogger;
-import com.example.activitylifecycle.MainActivity;
-import com.example.activitylifecycle.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.Logging.AppLogger;
+import com.example.activitylifecycle.MainActivity;
+import com.example.activitylifecycle.R;
 
 public class SavedInstance extends Activity {
 

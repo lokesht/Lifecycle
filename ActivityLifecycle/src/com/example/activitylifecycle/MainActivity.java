@@ -3,15 +3,17 @@ package com.example.activitylifecycle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.Logging.AppLogger;
 import com.example.activityinstance.SavedInstance;
 import com.example.implecitintent.ActivityImplicitIntent;
+import com.example.toast.ActivityCustomToast;
 
 public class MainActivity extends Activity {
 
@@ -28,16 +30,17 @@ public class MainActivity extends Activity {
 
 		/** */
 		init();
+
 	}
 
 	/** */
 	private void init() {
 		TextView tv = (TextView) findViewById(R.id.tv_test);
-		tv.setText("A "+count + "");
+		tv.setText("A " + count + "");
 
 	}
 
-	public void onIntent(View v) {
+	public void onProcess(View v) {
 		Intent in = new Intent(this, ActivityB.class);
 		startActivity(in);
 	}
@@ -56,6 +59,7 @@ public class MainActivity extends Activity {
 		AppLogger.writeLog("A-onRestoreInstanceState");
 		AppLogger.ToastShort(this, "A-onRestoreInstanceState");
 	}
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -73,17 +77,17 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		
+
 		AppLogger.writeLog("A-onSaveInstanceState");
 		AppLogger.ToastShort(this, "A-onSaveInstanceState");
 	}
+
 	@Override
 	protected void onStop() {
 		super.onStop();
 		AppLogger.writeLog("A-onStop");
 		AppLogger.ToastShort(this, "A-onStop");
-		
-		
+
 	}
 
 	@Override
@@ -98,29 +102,32 @@ public class MainActivity extends Activity {
 		super.onDestroy();
 		AppLogger.writeLog("A-onDestroy");
 		AppLogger.ToastShort(this, "A-onDestroy");
-		
-		/** Just two check what will happen if call again*/
-//		Intent in = new Intent(this, MainActivity.class);
-//		startActivity(in);
+
+		/** Just two check what will happen if call again */
+		// Intent in = new Intent(this, MainActivity.class);
+		// startActivity(in);
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent in=null;
-		switch(item.getItemId())
-		{
+		Intent in = null;
+		switch (item.getItemId()) {
 		case R.id.action_save_instance:
-			 in = new Intent(this, SavedInstance.class);
+			in = new Intent(this, SavedInstance.class);
 			startActivity(in);
 			break;
 		case R.id.action_implicit_intent:
-			 in = new Intent(this, ActivityImplicitIntent.class);
+			in = new Intent(this, ActivityImplicitIntent.class);
+			startActivity(in);
+			
+		case R.id.action_custom_toast:
+			in = new Intent(this, ActivityCustomToast.class);
 			startActivity(in);
 		}
 		return super.onOptionsItemSelected(item);

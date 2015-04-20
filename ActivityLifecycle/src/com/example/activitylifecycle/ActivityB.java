@@ -32,7 +32,7 @@ public class ActivityB extends Activity {
 		tv.setText("B "+count+"");
 		
 	}
-	public void onIntent(View v) {
+	public void onProcess(View v) {
 		Intent in = new Intent(this, MainActivity.class);
 		startActivity(in);
 	}
