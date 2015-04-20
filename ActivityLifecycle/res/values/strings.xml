@@ -12,5 +12,7 @@
      <string name="customtoast">CustomToast</string>
     
      <string name="activity_dynamic_frag">Activity Dynamic Frag</string>
+    
+     <string name="fragment_manager">fragment Manager</string>
 
 </resources>

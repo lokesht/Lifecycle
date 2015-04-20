@@ -10,8 +10,9 @@ import android.view.ViewGroup;
 
 import com.example.Logging.AppLogger;
 import com.example.activitylifecycle.R;
+import com.example.listener.Bridge;
 
-public class FragmentLife extends Fragment {
+public class FragmentLife extends Fragment{
 
 	String TAG = "FragmentLife";
 
@@ -123,4 +124,5 @@ public class FragmentLife extends Fragment {
 		AppLogger.ToastShort(getActivity(), "FRAG-onDetach");
 		AppLogger.writeLog("FRAG-onDetach");
 	}
+
 }

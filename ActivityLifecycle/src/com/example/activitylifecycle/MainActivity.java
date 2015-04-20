@@ -39,9 +39,9 @@ public class MainActivity extends Activity {
 	private void init() {
 		TextView tv = (TextView) findViewById(R.id.tv_test);
 		tv.setText("A " + count + "");
-		
-		/** Fragment Test*/
-		//FragmentLife fragLife =new FragmentLife();
+
+		/** Fragment Test */
+		// FragmentLife fragLife =new FragmentLife();
 
 	}
 
@@ -56,16 +56,15 @@ public class MainActivity extends Activity {
 		Log.i(TAG, "A-onRestart");
 		AppLogger.ToastShort(this, "A-onRestart");
 		AppLogger.writeLog("A-onRestart");
-		
+
 	}
-	
+
 	@Override
 	protected void onStart() {
 		super.onStart();
 		Log.i(TAG, "A-onStart");
 		AppLogger.ToastShort(this, "A-OnStart");
 		AppLogger.writeLog("A-OnStart");
-		
 
 	}
 
@@ -75,7 +74,7 @@ public class MainActivity extends Activity {
 		Log.i(TAG, "A-onRestoreInstanceState");
 		AppLogger.ToastShort(this, "A-onRestoreInstanceState");
 		AppLogger.writeLog("A-onRestoreInstanceState");
-		
+
 	}
 
 	@Override
@@ -112,8 +111,6 @@ public class MainActivity extends Activity {
 
 	}
 
-	
-
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
@@ -147,9 +144,13 @@ public class MainActivity extends Activity {
 		case R.id.action_custom_toast:
 			in = new Intent(this, ActivityCustomToast.class);
 			startActivity(in);
-			
+
 		case R.id.action_dynamic_frag:
 			in = new Intent(this, ActivityDynamicFrag.class);
+			startActivity(in);
+			
+		case R.id.action_fragment_manager:
+			in = new Intent(this, ActivityFragmentManager.class);
 			startActivity(in);
 		}
 		return super.onOptionsItemSelected(item);

@@ -29,6 +29,11 @@
         android:orderInCategory="100"
         android:title="@string/activity_dynamic_frag"
         android:showAsAction="never"/>
+    <item
+        android:id="@+id/action_fragment_manager"
+        android:orderInCategory="100"
+        android:title="@string/fragment_manager"
+        android:showAsAction="never"/>
     
 
 </menu>
