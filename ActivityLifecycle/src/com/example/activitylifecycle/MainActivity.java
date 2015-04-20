@@ -3,29 +3,32 @@ package com.example.activitylifecycle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.Logging.AppLogger;
 import com.example.activityinstance.SavedInstance;
+import com.example.fragment.FragmentLife;
 import com.example.implecitintent.ActivityImplicitIntent;
 import com.example.toast.ActivityCustomToast;
 
 public class MainActivity extends Activity {
 
 	public static int count = 0;
+	String TAG = "MainActivity";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		AppLogger.writeLog("A-onCreate");
+		Log.i(TAG, "A-onCreate");
 		AppLogger.ToastShort(this, "A-onCreate");
+		AppLogger.writeLog("A-onCreate");
+
 		count++;
 
 		/** */
@@ -37,6 +40,9 @@ public class MainActivity extends Activity {
 	private void init() {
 		TextView tv = (TextView) findViewById(R.id.tv_test);
 		tv.setText("A " + count + "");
+		
+		/** Fragment Test*/
+		//FragmentLife fragLife =new FragmentLife();
 
 	}
 
@@ -46,23 +52,37 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
+	protected void onRestart() {
+		super.onRestart();
+		Log.i(TAG, "A-onRestart");
+		AppLogger.ToastShort(this, "A-onRestart");
+		AppLogger.writeLog("A-onRestart");
+		
+	}
+	
+	@Override
 	protected void onStart() {
 		super.onStart();
-		AppLogger.writeLog("A-OnStart");
+		Log.i(TAG, "A-onStart");
 		AppLogger.ToastShort(this, "A-OnStart");
+		AppLogger.writeLog("A-OnStart");
+		
 
 	}
 
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		super.onRestoreInstanceState(savedInstanceState);
-		AppLogger.writeLog("A-onRestoreInstanceState");
+		Log.i(TAG, "A-onRestoreInstanceState");
 		AppLogger.ToastShort(this, "A-onRestoreInstanceState");
+		AppLogger.writeLog("A-onRestoreInstanceState");
+		
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		Log.i(TAG, "A-onResume");
 		AppLogger.writeLog("A-onResume");
 		AppLogger.ToastShort(this, "A-onResume");
 	}
@@ -70,6 +90,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		Log.i(TAG, "A-onPause");
 		AppLogger.writeLog("A-onPause");
 		AppLogger.ToastShort(this, "A-onPause");
 	}
@@ -78,6 +99,7 @@ public class MainActivity extends Activity {
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 
+		Log.i(TAG, "A-onRestoreInstanceState");
 		AppLogger.writeLog("A-onSaveInstanceState");
 		AppLogger.ToastShort(this, "A-onSaveInstanceState");
 	}
@@ -85,21 +107,18 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onStop() {
 		super.onStop();
+		Log.i(TAG, "A-onStop");
 		AppLogger.writeLog("A-onStop");
 		AppLogger.ToastShort(this, "A-onStop");
 
 	}
 
-	@Override
-	protected void onRestart() {
-		super.onRestart();
-		AppLogger.writeLog("A-onRestart");
-		AppLogger.ToastShort(this, "A-onRestart");
-	}
+	
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		Log.i(TAG, "A-onDestroy");
 		AppLogger.writeLog("A-onDestroy");
 		AppLogger.ToastShort(this, "A-onDestroy");
 
@@ -125,7 +144,7 @@ public class MainActivity extends Activity {
 		case R.id.action_implicit_intent:
 			in = new Intent(this, ActivityImplicitIntent.class);
 			startActivity(in);
-			
+
 		case R.id.action_custom_toast:
 			in = new Intent(this, ActivityCustomToast.class);
 			startActivity(in);
