@@ -39,10 +39,6 @@ public class MainActivity extends Activity {
 	private void init() {
 		TextView tv = (TextView) findViewById(R.id.tv_test);
 		tv.setText("A " + count + "");
-
-		/** Fragment Test */
-		// FragmentLife fragLife =new FragmentLife();
-
 	}
 
 	public void onProcess(View v) {
@@ -151,6 +147,10 @@ public class MainActivity extends Activity {
 			
 		case R.id.action_fragment_manager:
 			in = new Intent(this, ActivityFragmentManager.class);
+			startActivity(in);
+			
+		case R.id.action_fragment_module_ui:
+			in = new Intent(this, ActivityFragmentModulerUI.class);
 			startActivity(in);
 		}
 		return super.onOptionsItemSelected(item);

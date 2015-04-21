@@ -37,21 +37,21 @@ public class ActivityFragmentModulerUI extends Activity implements FragmentModul
 
 	}
 
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
-
-		if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-
-		} else {
-
-		}
-	}
+//	@Override
+//	public void onConfigurationChanged(Configuration newConfig) {
+//		super.onConfigurationChanged(newConfig);
+//
+//		if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//
+//		} else {
+//
+//		}
+//	}
 
 	@Override
 	public void onSubjectChange(int index) {
       
 		FragmenModuleB fragB= (FragmenModuleB)getFragmentManager().findFragmentByTag("FragB");
-		//fragB.
+		fragB.onChange(index);
 	}
 }

@@ -53,7 +53,7 @@ public class FragmentModuleA extends Fragment {
 		View v = inflater.inflate(R.layout.fragment_module_a, container, false);
 
 		lsView = (ListView) v.findViewById(R.id.lv_main);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Header, android.R.id.text1);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Header, android.R.layout.simple_list_item_1);
 		lsView.setAdapter(adapter);
 		return v;
 	}

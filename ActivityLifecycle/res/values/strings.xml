@@ -14,5 +14,7 @@
      <string name="activity_dynamic_frag">Activity Dynamic Frag</string>
     
      <string name="fragment_manager">fragment Manager</string>
+    
+     <string name="fragment_module">Fragment Module</string>
 
 </resources>
