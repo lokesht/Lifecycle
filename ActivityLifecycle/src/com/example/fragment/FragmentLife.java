@@ -6,16 +6,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.Logging.AppLogger;
 import com.example.activitylifecycle.R;
-import com.example.listener.Bridge;
 
 public class FragmentLife extends Fragment{
 
 	String TAG = "FragmentLife";
-
+	
+	/** for demonstration on onsaved instance state*/
+    int count = 0;
+    
 	@Override
 	public void onAttach(Activity activity) {
 
@@ -32,6 +37,15 @@ public class FragmentLife extends Fragment{
 		Log.e(TAG, "FRAG-onCreate");
 		AppLogger.ToastShort(getActivity(), "FRAG-onCreate");
 		AppLogger.writeLog("FRAG-onCreate");
+		
+		
+		/**For same purpose we can utilize onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)'s
+		 * savedInstanceState*/
+		if(savedInstanceState!=null)
+		{
+			count = savedInstanceState.getInt("counter",0);
+			setText(count);
+		}
 	}
 
 	@Override
@@ -41,6 +55,8 @@ public class FragmentLife extends Fragment{
 		AppLogger.ToastShort(getActivity(), "FRAG-onCreateView");
 		AppLogger.writeLog("FRAG-onCreateView");
 		View v = inflater.inflate(R.layout.fragment_life, container, false);
+		
+		
 		return v;
 		// return super.onCreateView(inflater, container, savedInstanceState);
 	}
@@ -49,11 +65,27 @@ public class FragmentLife extends Fragment{
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
+		
+		Button btn = (Button)getActivity().findViewById(R.id.btn_frag_life);
+		btn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				count++;
+				setText(count);
+			}
+		});
+		
 		Log.e(TAG, "FRAG-onActivityCreated");
 		AppLogger.ToastShort(getActivity(), "FRAG-onActivityCreated");
 		AppLogger.writeLog("FRAG-onActivityCreated");
 	}
 
+	private void setText(int count)
+	{
+		TextView tv = (TextView)getActivity().findViewById(R.id.textView1);
+		tv.setText(count);
+	}
 	@Override
 	public void onStart() {
 
@@ -84,6 +116,8 @@ public class FragmentLife extends Fragment{
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
+		outState.putInt("counter", count);
+		
 		Log.e(TAG, "FRAG-onSaveInstanceState");
 		AppLogger.ToastShort(getActivity(), "FRAG-onSaveInstanceState");
 		AppLogger.writeLog("FRAG-onSaveInstanceState");
