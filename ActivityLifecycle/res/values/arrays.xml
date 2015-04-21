@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <string-array name="Header">
+       <item >Header1</item>
+       <item >Header2</item>
+       <item >Header3</item>
+       <item >Header4</item>
+       <item >Header5</item>
+   </string-array>
+   
+   <string-array name="Subject">
+       <item >Subject1</item>
+       <item >Subject2</item>
+       <item >Subject3</item>
+       <item >Subject4</item>
+       <item >Subject5</item>
+   </string-array>
+</resources>
