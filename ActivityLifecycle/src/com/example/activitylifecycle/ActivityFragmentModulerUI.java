@@ -6,7 +6,7 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
-import com.example.fragment.FragmenModuleB;
+import com.example.fragment.FragmentModuleB;
 import com.example.fragment.FragmentModuleA;
 
 public class ActivityFragmentModulerUI extends Activity implements FragmentModuleA.Bridge{
@@ -24,15 +24,14 @@ public class ActivityFragmentModulerUI extends Activity implements FragmentModul
 	}
 
 	public void init() {
-		FragmenModuleB fragb = new FragmenModuleB();
+		FragmentModuleB fragb = new FragmentModuleB();
 		FragmentModuleA fraga = new FragmentModuleA();
 
 		FragmentManager fragManage = getFragmentManager();
 		FragmentTransaction fragTrans = fragManage.beginTransaction();
-
 		fragTrans.add(R.id.ll_parent, fraga, "FragA");
 		fragTrans.add(R.id.ll_parent, fragb, "FragB");
-		
+		//fragTrans.
 		fragTrans.commit();
 
 	}
@@ -51,7 +50,7 @@ public class ActivityFragmentModulerUI extends Activity implements FragmentModul
 	@Override
 	public void onSubjectChange(int index) {
       
-		FragmenModuleB fragB= (FragmenModuleB)getFragmentManager().findFragmentByTag("FragB");
+		FragmentModuleB fragB= (FragmentModuleB)getFragmentManager().findFragmentByTag("FragB");
 		fragB.onChange(index);
 	}
 }

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.Logging.AppLogger;
 import com.example.activitylifecycle.R;
 
-public class FragmenModuleB extends Fragment {
+public class FragmentModuleB extends Fragment {
 	String TAG = "FragmentModuleB";
 
 	@Override
