@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 
-		Log.i(TAG, "A-onRestoreInstanceState");
+		Log.i(TAG, "A-onSaveInstanceState");
 		AppLogger.writeLog("A-onSaveInstanceState");
 		AppLogger.ToastShort(this, "A-onSaveInstanceState");
 	}
