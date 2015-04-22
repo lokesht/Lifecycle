@@ -157,6 +157,11 @@ public class MainActivity extends Activity {
 			in = new Intent(this, ActivityFragmentModulerUI.class);
 			startActivity(in);
 			break;
+			
+		case R.id.action_fragment_transaction:
+			in = new Intent(this, ActivityFragmentTransaction.class);
+			startActivity(in);
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

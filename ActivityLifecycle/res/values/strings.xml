@@ -16,5 +16,11 @@
      <string name="fragment_manager">fragment Manager</string>
     
      <string name="fragment_module">Fragment Module</string>
+    
+     <string name="fragment_a">Fragment A</string>
+    
+     <string name="fragment_b">Fragment B</string>
+    
+     <string name="fragment_transaction">Fragment Transaction</string>
 
 </resources>

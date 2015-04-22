@@ -28,18 +28,20 @@
             android:name=".ActivityB"
             android:launchMode="singleInstance" >
         </activity>
-        
         <activity android:name="com.example.activityinstance.SavedInstance" >
         </activity>
-        
-        <activity android:name="com.example.implecitintent.ActivityImplicitIntent">
+        <activity android:name="com.example.implecitintent.ActivityImplicitIntent" >
         </activity>
-        <activity android:name="com.example.toast.ActivityCustomToast"></activity>
-        <activity android:name="com.example.activitylifecycle.ActivityDynamicFrag"></activity>
-         <activity android:name="com.example.activitylifecycle.ActivityFragmentManager"></activity>
-           <activity android:name="com.example.activitylifecycle.ActivityFragmentModulerUI"></activity>
-         
-        
+        <activity android:name="com.example.toast.ActivityCustomToast" >
+        </activity>
+        <activity android:name="com.example.activitylifecycle.ActivityDynamicFrag" >
+        </activity>
+        <activity android:name="com.example.activitylifecycle.ActivityFragmentManager" >
+        </activity>
+        <activity android:name="com.example.activitylifecycle.ActivityFragmentModulerUI" >
+        </activity>
+        <activity android:name="com.example.activitylifecycle.ActivityFragmentTransaction" >
+        </activity>
     </application>
 
 </manifest>
