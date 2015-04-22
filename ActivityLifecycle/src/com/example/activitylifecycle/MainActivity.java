@@ -136,22 +136,27 @@ public class MainActivity extends Activity {
 		case R.id.action_implicit_intent:
 			in = new Intent(this, ActivityImplicitIntent.class);
 			startActivity(in);
+			break;
 
 		case R.id.action_custom_toast:
 			in = new Intent(this, ActivityCustomToast.class);
 			startActivity(in);
+			break;
 
 		case R.id.action_dynamic_frag:
 			in = new Intent(this, ActivityDynamicFrag.class);
 			startActivity(in);
+			break;
 			
 		case R.id.action_fragment_manager:
 			in = new Intent(this, ActivityFragmentManager.class);
 			startActivity(in);
+			break;
 			
 		case R.id.action_fragment_module_ui:
 			in = new Intent(this, ActivityFragmentModulerUI.class);
 			startActivity(in);
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

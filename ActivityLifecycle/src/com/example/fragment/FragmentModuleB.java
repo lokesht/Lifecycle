@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.Logging.AppLogger;
 import com.example.activitylifecycle.R;
 
 public class FragmentModuleB extends Fragment {
