@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Blue"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_add_fragment_a"
+                android:onClick="onAdd"
+                android:text="Add Frag A" />
+
+            <Button
+                android:id="@+id/btn_add_remove_fragment_a"
+                android:onClick="onRemove"
+                android:text="Rem Frag A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_attach_fragment_a"
+                android:onClick="onAttach"
+                android:text="Attach Frag A" />
+
+            <Button
+                android:id="@+id/btn_detach_a"
+                android:onClick="onDettach"
+                android:text="Dettach Frag A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_add_fragment_b"
+                android:onClick="onAdd"
+                android:text="Add Frag B" />
+
+            <Button
+                android:id="@+id/btn_add_remove_fragment_b"
+                android:onClick="onRemove"
+                android:text="Rem Frag B" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_attach_fragment_b"
+                android:onClick="onAttach"
+                android:text="Attach Frag B" />
+
+            <Button
+                android:id="@+id/btn_detach_b"
+                android:onClick="onDettach"
+                android:text="Dettach Frag B" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btn_replace_fragment_a_b"
+                android:onClick="onReplace"
+                android:text="Replace A to B" />
+
+            <Button
+                android:id="@+id/btn_replace_fragment_b_a"
+                android:onClick="onReplace"
+                android:text="Replace  B to A" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+</LinearLayout>

@@ -41,5 +41,11 @@
         android:title="@string/fragment_module"
         android:showAsAction="never"/>
     
+    <item
+        android:id="@+id/action_fragment_transaction"
+        android:orderInCategory="100"
+        android:title="@string/fragment_transaction"
+        android:showAsAction="never"/>
+    
 
 </menu>

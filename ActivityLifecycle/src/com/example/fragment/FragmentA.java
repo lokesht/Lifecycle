@@ -26,7 +26,6 @@ public class FragmentA extends Fragment {
 	public void onAttach(Activity activity) {
 
 		super.onAttach(activity);
-		
 
 		Log.e(TAG, "F-A-onAttach");
 		AppLogger.writeLog("F-A-onAttach");
@@ -56,6 +55,7 @@ public class FragmentA extends Fragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+
 		bridgeCommunication = (Bridge) getActivity();
 
 		Button btnA = (Button) getActivity().findViewById(R.id.btn_frag_a);
@@ -147,8 +147,8 @@ public class FragmentA extends Fragment {
 		View va = getActivity().findViewById(R.id.ll_frag_a);
 		View vb = getActivity().findViewById(R.id.ll_frag_b);
 
-		ColorDrawable tmp = (ColorDrawable)va.getBackground();
-		va.setBackgroundDrawable((ColorDrawable)vb.getBackground());
+		ColorDrawable tmp = (ColorDrawable) va.getBackground();
+		va.setBackgroundDrawable((ColorDrawable) vb.getBackground());
 		vb.setBackgroundDrawable(tmp);
 	}
 }
